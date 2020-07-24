@@ -11,7 +11,7 @@ module.exports = (val, options = {}) => {
     return result;
   } else {
     const array = val.match(/[0-9]+ *[a-z]+/gi);
-    const result = array.reduce((a, b) => ms(a) + ms(b), 0s);
+    const result = array.reduce((a, b) => ms(a) + ms(b), "0s");
     return result;
   }
 };
