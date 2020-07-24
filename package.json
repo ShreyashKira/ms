@@ -3,8 +3,9 @@
   "version": "2.1.2",
   "description": "Tiny millisecond conversion utility",
   "repository": "zeit/ms",
-  "main": "./index",
+  "main": "./main",
   "files": [
+    "main.js",
     "index.js"
   ],
   "scripts": {
@@ -36,6 +37,7 @@
   },
   "dependencies": {
     "moment": "2.27.0",
-    "moment-duration-format": "2.3.2"
+    "moment-duration-format": "2.3.2",
+    "prettier": "2.0.5"
   }
 }
