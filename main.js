@@ -4,8 +4,8 @@ require('moment-duration-format');
 
 module.exports = (val, options = {}) => {
   if (!isNaN(val)) {
-    let format = 'd[d] h[h] m[m] s[s]';
-    if (options.long) format = 'day(s)[d] hour(s)[h] minute(s)[m] second(s)[s]';
+    let format = 'D[d] H[h] m[m] s[s]';
+    if (options.long) format = 'D[day(s)] H[hour(s)] m[min(s)] s[sec]';
     if (options.format) format = options.format;
     const result = moment.duration(val).format(format);
     return result;
