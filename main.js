@@ -10,8 +10,10 @@ module.exports = (val, options = {}) => {
     const result = moment.duration(val).format(format);
     return result;
   } else {
-    const array = val.match(/[0-9]+ *[a-z]+/gi);
-    const result = array.reduce((a, b) => ms(a) + ms(b));
+    const array = val.match(
+      /[0-9]+ *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)/gi
+    );
+    const result = array.reduce((a, b) => (isNaN(a) ? ms(a) : a) + ms(b), '0s');
     return result;
   }
 };
